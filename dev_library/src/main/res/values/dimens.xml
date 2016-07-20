@@ -1,0 +1,39 @@
+<resources>
+
+    <!--margin-->
+    <dimen name="e_margin_big">20dp</dimen>
+    <dimen name="e_margin_mid">15dp</dimen>
+    <dimen name="e_margin_small">10dp</dimen>
+    <dimen name="e_margin_smaller">5dp</dimen>
+
+    <!--padding-->
+    <dimen name="e_padding_big">20dp</dimen>
+    <dimen name="e_padding_mid">15dp</dimen>
+    <dimen name="e_padding_small">10dp</dimen>
+    <dimen name="e_padding_smaller">5dp</dimen>
+
+    <!-- font -->
+    <dimen name="e_font_10">10sp</dimen>
+    <dimen name="e_font_12">12sp</dimen>
+    <dimen name="e_font_14">14sp</dimen>
+    <dimen name="e_font_16">16sp</dimen>
+    <dimen name="e_font_18">18sp</dimen>
+    <dimen name="e_font_20">20sp</dimen>
+
+    <!--width-->
+    <dimen name="e_width_50">50dp</dimen>
+    <dimen name="e_width_100">100dp</dimen>
+    <dimen name="e_width_120">120dp</dimen>
+    <dimen name="e_width_150">150dp</dimen>
+
+    <!--height-->
+    <dimen name="e_height_45">45dp</dimen>
+    <dimen name="e_height_50">50dp</dimen>
+    <dimen name="e_height_100">100dp</dimen>
+    <dimen name="e_height_120">120dp</dimen>
+    <dimen name="e_height_150">150dp</dimen>
+
+    <dimen name="e_line">0.5dp</dimen>
+    <dimen name="e_radius">5dp</dimen>
+
+</resources>

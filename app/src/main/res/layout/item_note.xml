@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/e_padding_smaller"
+    android:paddingTop="@dimen/e_padding_smaller">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/e_margin_smaller"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/e_padding_mid"
+        android:paddingRight="@dimen/e_padding_mid"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/e_margin_smaller"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/action_settings"
+            android:textColor="@color/e_blue"
+            android:textSize="@dimen/e_font_16"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/e_margin_smaller"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:text="@string/action_settings"
+            android:textSize="@dimen/e_font_12"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/e_padding_mid"
+        android:paddingRight="@dimen/e_padding_mid"
+        android:text="@string/action_settings"
+        android:textSize="@dimen/e_font_14"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/e_line"
+        android:background="@color/e_red"/>
+
+</LinearLayout>

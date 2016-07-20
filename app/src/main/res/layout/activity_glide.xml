@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.e.library.widget.ETitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_text="@string/activity_glide"
+            >
+        </com.e.library.widget.ETitleBar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_blur"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                />
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/e_width_100"
+                android:layout_height="@dimen/e_height_100"
+                android:layout_gravity="center"
+                android:scaleType="fitStart"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/e_margin_small"
+            android:text="gif预览图"
+            />
+
+        <ImageView
+            android:id="@+id/iv_gif_thumbnail"
+            android:layout_width="@dimen/e_width_150"
+            android:layout_height="@dimen/e_height_150"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/e_margin_small"
+            android:text="gif"
+            />
+
+        <ImageView
+            android:id="@+id/iv_gif"
+            android:layout_width="@dimen/e_width_150"
+            android:layout_height="@dimen/e_height_150"
+            />
+    </LinearLayout>
+
+</ScrollView>

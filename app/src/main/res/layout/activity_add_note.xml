@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.e.library.widget.ETitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:forward_text="保存"
+        app:title_text="@string/activity_add_note">
+
+    </com.e.library.widget.ETitleBar>
+
+    <EditText
+        android:id="@+id/et_titile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/e_margin_small"
+        android:layout_marginTop="@dimen/e_margin_small"
+        android:hint="标题"
+        android:textSize="@dimen/e_font_14"/>
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="top"
+        android:hint="记录一下吧"
+        android:textSize="@dimen/e_font_14"/>
+
+</LinearLayout>

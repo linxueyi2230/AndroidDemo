@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.e.library.widget.ETitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="@string/activity_label_value"
+        ></com.e.library.widget.ETitleBar>
+
+    <com.e.library.widget.ELabelValueView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:icon_drawable="@mipmap/pe"
+        app:label_text="我的钱包"
+        app:value_text="提现、余额、收支明细"
+        >
+    </com.e.library.widget.ELabelValueView>
+
+    <com.e.library.widget.ELabelValueView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:icon_drawable="@mipmap/pe"
+        app:icon_visible="true"
+        app:label_text="师傅红包"
+        >
+    </com.e.library.widget.ELabelValueView>
+
+    <com.e.library.widget.ELabelValueView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:icon_drawable="@mipmap/pe"
+        app:label_text="每周账单"
+        >
+    </com.e.library.widget.ELabelValueView>
+
+    <com.e.library.widget.ELabelValueView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:icon_drawable="@mipmap/pe"
+        app:label_text="邀请分成"
+        app:value_text="轻松获得额外收入"
+        >
+    </com.e.library.widget.ELabelValueView>
+
+
+</LinearLayout>

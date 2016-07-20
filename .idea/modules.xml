@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EventBus/EventBus.iml" filepath="$PROJECT_DIR$/EventBus/EventBus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EventBusAnnotationProcessor/EventBusAnnotationProcessor.iml" filepath="$PROJECT_DIR$/EventBusAnnotationProcessor/EventBusAnnotationProcessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-volley/android-volley.iml" filepath="$PROJECT_DIR$/android-volley/android-volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dev_library/dev_library.iml" filepath="$PROJECT_DIR$/dev_library/dev_library.iml" />
+    </modules>
+  </component>
+</project>
