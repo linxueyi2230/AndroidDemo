@@ -12,14 +12,14 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/5.
  */
-public abstract class EBaseRecycleAdapter<T> extends RecyclerView.Adapter<EBaseRecycleAdapter.RecycleHolder> {
+public abstract class EBaseRecyclerAdapter<T> extends RecyclerView.Adapter<EBaseRecyclerAdapter.RecycleHolder> {
 
     protected int invalid = -1;
     protected List<T> mDatas;
     protected Context mContext;
     protected EListener<T> onItemClickListener;
 
-    public EBaseRecycleAdapter(Context context,List<T> datas) {
+    public EBaseRecyclerAdapter(Context context, List<T> datas) {
         this.mContext = context;
         this.mDatas = datas;
     }

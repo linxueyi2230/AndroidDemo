@@ -10,13 +10,10 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/5.
  */
-public abstract class EMultiRecycleAdapter<T> extends EBaseRecycleAdapter<T> {
-    public EMultiRecycleAdapter(Context context, List<T> datas) {
+public abstract class EMultiRecyclerAdapter<T> extends EBaseRecyclerAdapter<T> {
+    public EMultiRecyclerAdapter(Context context, List<T> datas) {
         super(context, datas);
     }
-
-    @Override
-    public abstract int getItemCount();
 
     @Override
     public abstract int getItemViewType(int position);

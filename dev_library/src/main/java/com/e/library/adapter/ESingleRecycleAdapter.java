@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/5.
  */
-public abstract class ESingleRecycleAdapter<T> extends EBaseRecycleAdapter<T> {
+public abstract class ESingleRecycleAdapter<T> extends EBaseRecyclerAdapter<T> {
 
     protected abstract int getLayoutId();
     protected abstract void onBindData(View convertView,T data,int position);
