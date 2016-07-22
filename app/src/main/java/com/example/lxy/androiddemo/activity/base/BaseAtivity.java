@@ -44,7 +44,7 @@ public abstract class BaseAtivity extends EBaseActivity {
             return;
         }
         if (mLoading !=null && mLoading.isShowing()){
-            mLoading.hide();
+            mLoading.dismiss();
         }
     }
 

@@ -98,7 +98,7 @@ public abstract class BaseSwipeBackActivity extends EBaseActivity {
             return;
         }
         if (mLoading != null && mLoading.isShowing()) {
-            mLoading.hide();
+            mLoading.dismiss();
         }
     }
 
