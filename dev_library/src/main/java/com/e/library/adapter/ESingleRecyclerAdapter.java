@@ -10,12 +10,12 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/5.
  */
-public abstract class ESingleRecycleAdapter<T> extends EBaseRecyclerAdapter<T> {
+public abstract class ESingleRecyclerAdapter<T> extends EBaseRecyclerAdapter<T> {
 
     protected abstract int getLayoutId();
     protected abstract void onBindData(View convertView,T data,int position);
 
-    public ESingleRecycleAdapter(Context context, List<T> datas) {
+    public ESingleRecyclerAdapter(Context context, List<T> datas) {
         super(context, datas);
     }
 
