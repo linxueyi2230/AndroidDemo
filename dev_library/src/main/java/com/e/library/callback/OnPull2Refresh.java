@@ -40,7 +40,6 @@ public interface OnPull2Refresh<T> {
      *
 	 * 由于ipiao后台json不规范，因此将http请求以及解析开放出，
 	 * 让开发人员自己解析并判断
-	 * fack
 	 * @param params
      */
 	public void doHttpRequest(Map<String, String> params);
