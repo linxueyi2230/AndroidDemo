@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.entity.Photo;
 
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/7.
  */
-public class PhotoAdapter extends ESingleRecycleAdapter<Photo> {
+public class PhotoAdapter extends ESingleRecyclerAdapter<Photo> {
 
     public PhotoAdapter(Context context, List<Photo> datas) {
         super(context, datas);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.entity.Note;
 
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/14.
  */
-public class NoteAdapter extends ESingleRecycleAdapter<Note> {
+public class NoteAdapter extends ESingleRecyclerAdapter<Note> {
 
     private SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
     public NoteAdapter(Context context, List<Note> datas) {

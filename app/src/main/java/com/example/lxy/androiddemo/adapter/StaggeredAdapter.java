@@ -2,11 +2,10 @@ package com.example.lxy.androiddemo.adapter;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.Random;
 /**
  * Created by lxy on 2016/7/7.
  */
-public class StaggeredAdapter extends ESingleRecycleAdapter<String> {
+public class StaggeredAdapter extends ESingleRecyclerAdapter<String> {
 
     private Random random;
     public StaggeredAdapter(Context context, List<String> datas) {

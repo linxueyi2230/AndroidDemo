@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.entity.City;
 
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/6.
  */
-public class CityAdapter extends ESingleRecycleAdapter<City> {
+public class CityAdapter extends ESingleRecyclerAdapter<City> {
 
     public CityAdapter(Context context, List<City> datas) {
         super(context, datas);

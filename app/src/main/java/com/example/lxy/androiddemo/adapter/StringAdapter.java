@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/7.
  */
-public class StringAdapter extends ESingleRecycleAdapter<String> {
+public class StringAdapter extends ESingleRecyclerAdapter<String> {
     public StringAdapter(Context context, List<String> datas) {
         super(context, datas);
     }

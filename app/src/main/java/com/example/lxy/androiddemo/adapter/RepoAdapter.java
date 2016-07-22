@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.e.library.adapter.ESingleRecycleAdapter;
+import com.e.library.adapter.ESingleRecyclerAdapter;
 import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.entity.Repo;
 
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by lxy on 2016/7/10.
  */
-public class RepoAdapter extends ESingleRecycleAdapter<Repo> {
+public class RepoAdapter extends ESingleRecyclerAdapter<Repo> {
 
     public RepoAdapter(Context context, List<Repo> datas) {
         super(context, datas);
