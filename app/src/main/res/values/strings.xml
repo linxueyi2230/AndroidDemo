@@ -16,4 +16,5 @@
     <string name="activity_add_note">写一写</string>
     <string name="activity_glide">Glide</string>
     <string name="activity_chat">chat</string>
+    <string name="activity_mvp">mvp模式</string>
 </resources>

@@ -29,6 +29,7 @@ public class RetrofitHttpClient {
 
     private static volatile RetrofitHttpClient instance;
     private Retrofit retrofit;
+    private ApiService service;
 
     public static RetrofitHttpClient getIns(){
         if (instance == null){
@@ -62,6 +63,7 @@ public class RetrofitHttpClient {
                 .addConverterFactory(GsonConverterFactory.create(EGsonUtils.getGson()))
                 .addConverterFactory(new ResponseFactory())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.newThread()))
+                .validateEagerly(true)
                 .client(client)
                 .build();
     }
@@ -69,6 +71,13 @@ public class RetrofitHttpClient {
 
     public <T> T createService(Class<T> clz) {
         return retrofit.create(clz);
+    }
+
+    public ApiService getService(){
+        if (service == null){
+            service = createService(ApiService.class);
+        }
+        return service;
     }
 
     public static class ResponseFactory extends Converter.Factory{
