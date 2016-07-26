@@ -59,7 +59,7 @@ public class JakeWhartonReposActivity extends BaseSwipeBackActivity {
 
     private void getReposByRetrofitCall(){
         showLoading();
-        ApiService api = RetrofitHttpClient.getIns().createService(ApiService.class);
+        ApiService api = RetrofitHttpClient.getIns().getService();
         Call<List<Repo>> call = api.getRepos("JakeWharton");
 
         call.enqueue(new Callback<List<Repo>>() {
@@ -83,7 +83,7 @@ public class JakeWhartonReposActivity extends BaseSwipeBackActivity {
 
     private void getReposByRxJava(){
         showLoading();
-        ApiService api = RetrofitHttpClient.getIns().createService(ApiService.class);
+        ApiService api = RetrofitHttpClient.getIns().getService();
         Observable<List<Repo>> observable = api.getReposByRxJava("JakeWharton");
         observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

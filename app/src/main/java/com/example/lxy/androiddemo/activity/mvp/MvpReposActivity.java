@@ -9,8 +9,8 @@ import com.e.library.widget.decorator.EDividerDecoration;
 import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.adapter.RepoAdapter;
 import com.example.lxy.androiddemo.entity.Repo;
-import com.example.lxy.androiddemo.mvp.ELceActivity;
-import com.example.lxy.androiddemo.mvp.view.ELceView;
+import com.example.lxy.androiddemo.mvp.activity.EMvpActivity;
+import com.example.lxy.androiddemo.mvp.view.EMvpView;
 import com.example.lxy.androiddemo.utils.RecycleViewUtils;
 
 import java.util.ArrayList;
@@ -19,13 +19,13 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * @see ELceView
+ * @see EMvpView
  * @see ReposPresenter
- * @see ELceActivity
+ * @see EMvpActivity
  *
  * Created by lxy on 2016/7/25 23:37.
  */
-public class MvpReposActivity extends ELceActivity<List<Repo>,ELceView<List<Repo>>,ReposPresenter> {
+public class MvpReposActivity extends EMvpActivity<List<Repo>,EMvpView<List<Repo>>,ReposPresenter> {
 
     @BindView(R.id.titlebar)
     ETitleBar titleBar;
@@ -46,15 +46,12 @@ public class MvpReposActivity extends ELceActivity<List<Repo>,ELceView<List<Repo
         RecycleViewUtils.setVerticalLayoutManager(this,recyclerView);
         adapter = new RepoAdapter(this,repos);
         recyclerView.setAdapter(adapter);
-
-        loadData();
     }
 
     @Override
-    public void loadData() {
+    public void onLoadData() {
         presenter.getRepos("JakeWharton");
     }
-
 
     @Override
     public void setData(List<Repo> data) {

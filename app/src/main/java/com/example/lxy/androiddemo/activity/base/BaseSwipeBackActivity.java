@@ -27,7 +27,6 @@ public abstract class BaseSwipeBackActivity extends EBaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initSwipBackLayout();
-        initLoading();
         initContentView();
         ButterKnife.bind(this);
         onInitView(savedInstanceState);
@@ -83,12 +82,11 @@ public abstract class BaseSwipeBackActivity extends EBaseActivity {
         mSwipeBackLayout.scrollToFinishActivity();
     }
 
-    private void initLoading() {
-        mLoading = new Loading(this);
-    }
-
     public void showLoading() {
-        if (mLoading != null && !mLoading.isShowing()) {
+        if (mLoading == null){
+            mLoading = new Loading(this);
+        }
+        if (!mLoading.isShowing()) {
             mLoading.show();
         }
     }

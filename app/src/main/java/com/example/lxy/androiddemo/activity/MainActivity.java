@@ -10,7 +10,7 @@ import android.view.View;
 import com.e.library.callback.EListener;
 import com.e.library.widget.decorator.EDividerDecoration;
 import com.example.lxy.androiddemo.R;
-import com.example.lxy.androiddemo.activity.base.BaseAtivity;
+import com.example.lxy.androiddemo.activity.base.BaseSwipeBackActivity;
 import com.example.lxy.androiddemo.adapter.NavAdapter;
 import com.example.lxy.androiddemo.entity.Navigation;
 import com.example.lxy.androiddemo.utils.RecycleViewUtils;
@@ -23,7 +23,7 @@ import butterknife.BindView;
 /**
  * Created by lxy on 2016/7/6.
  */
-public class MainActivity extends BaseAtivity {
+public class MainActivity extends BaseSwipeBackActivity {
 
     @BindView(R.id.rv_nav) RecyclerView rvNav;
     private NavAdapter adapter;
@@ -40,6 +40,7 @@ public class MainActivity extends BaseAtivity {
         divider.setLeftPadding(15);
         rvNav.addItemDecoration(divider);
         RecycleViewUtils.setVerticalLayoutManager(this,rvNav);
+        setSwipeBackEnable(false);
 
     }
 

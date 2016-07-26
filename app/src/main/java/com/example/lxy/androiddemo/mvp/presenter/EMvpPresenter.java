@@ -2,7 +2,7 @@ package com.example.lxy.androiddemo.mvp.presenter;
 
 import com.example.lxy.androiddemo.http.ApiService;
 import com.example.lxy.androiddemo.http.retrofit.RetrofitHttpClient;
-import com.example.lxy.androiddemo.mvp.view.ELceView;
+import com.example.lxy.androiddemo.mvp.view.EMvpView;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
 import rx.Observable;
@@ -13,12 +13,12 @@ import rx.schedulers.Schedulers;
 /**
  * Created by lxy on 2016/7/25 22:59.
  */
-public abstract class ELcePresenter<V extends ELceView<M>,M> extends MvpBasePresenter<V> {
+public class EMvpPresenter<V extends EMvpView<M>,M> extends MvpBasePresenter<V> {
 
     protected ApiService service;
     protected Subscriber<M> subscriber;
 
-    public ELcePresenter() {
+    public EMvpPresenter() {
         service = RetrofitHttpClient.getIns().getService();
     }
 
@@ -41,15 +41,15 @@ public abstract class ELcePresenter<V extends ELceView<M>,M> extends MvpBasePres
         subscriber = new Subscriber<M>() {
 
             @Override public void onCompleted() {
-                ELcePresenter.this.onCompleted();
+                EMvpPresenter.this.onCompleted();
             }
 
             @Override public void onError(Throwable e) {
-                ELcePresenter.this.onError(e);
+                EMvpPresenter.this.onError(e);
             }
 
             @Override public void onNext(M m) {
-                ELcePresenter.this.onNext(m);
+                EMvpPresenter.this.onNext(m);
             }
         };
 
