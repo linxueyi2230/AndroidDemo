@@ -9,6 +9,7 @@ import com.example.lxy.androiddemo.R;
 import com.example.lxy.androiddemo.dialog.Loading;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.Utils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
@@ -19,6 +20,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
  */
 public abstract class BaseSwipeBackActivity extends EBaseActivity {
 
+    private Unbinder unbinder;
     private Loading mLoading;
     private SwipeBackActivityHelper mHelper;
     protected SwipeBackLayout mSwipeBackLayout;
@@ -28,7 +30,7 @@ public abstract class BaseSwipeBackActivity extends EBaseActivity {
         super.onCreate(savedInstanceState);
         initSwipBackLayout();
         initContentView();
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         onInitView(savedInstanceState);
         OnInitListener();
         onInitData();
@@ -104,6 +106,9 @@ public abstract class BaseSwipeBackActivity extends EBaseActivity {
     protected void onDestroy() {
         hideLoading();
         mLoading = null;
+        if (unbinder !=null){
+            unbinder.unbind();
+        }
         super.onDestroy();
     }
 }

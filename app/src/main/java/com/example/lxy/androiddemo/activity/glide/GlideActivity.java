@@ -48,5 +48,7 @@ public class GlideActivity extends BaseSwipeBackActivity {
         Glide.with(this).load(img).bitmapTransform(new CropCircleTransformation(this)).into(ivAvatar);//圆形裁剪
         Glide.with(this).load(gif).asBitmap().placeholder(R.mipmap.ic_launcher).into(ivGifThumbnail);//加载gif第一帧（预览图）
         Glide.with(this).load(gif).asGif().placeholder(R.mipmap.ic_launcher).into(ivGif);//gif动态图
+
     }
+
 }

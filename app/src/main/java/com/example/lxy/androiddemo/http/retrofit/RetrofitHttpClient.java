@@ -1,6 +1,8 @@
 package com.example.lxy.androiddemo.http.retrofit;
 
 
+import android.util.Log;
+
 import com.e.library.utils.EGsonUtils;
 import com.example.lxy.androiddemo.activity.base.DemoApp;
 import com.example.lxy.androiddemo.http.ApiService;
@@ -45,7 +47,12 @@ public class RetrofitHttpClient {
 
     private RetrofitHttpClient(){
 
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                Log.i("RetrofitHttpClient",message);
+            }
+        });
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         File file = new File(DemoApp.getContext().getCacheDir(),"cache");
         Cache cache = new Cache(file,1024*1024*5);//5mb
@@ -62,7 +69,7 @@ public class RetrofitHttpClient {
                 .baseUrl(ApiService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(EGsonUtils.getGson()))
                 .addConverterFactory(new ResponseFactory())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.newThread()))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .validateEagerly(true)
                 .client(client)
                 .build();

@@ -85,7 +85,7 @@ public class JakeWhartonReposActivity extends BaseSwipeBackActivity {
         showLoading();
         ApiService api = RetrofitHttpClient.getIns().getService();
         Observable<List<Repo>> observable = api.getReposByRxJava("JakeWharton");
-        observable.subscribeOn(Schedulers.newThread())
+        observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<List<Repo>>() {
             @Override
