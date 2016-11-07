@@ -50,9 +50,8 @@ public abstract class EBaseRecyclerAdapter<T> extends RecyclerView.Adapter<EBase
 
     public void remove(T data){
         if (mDatas !=null && data !=null) {
-            int index = mDatas.indexOf(data);
-            mDatas.remove(data);
-            notifyItemRemoved(index);
+            int position = mDatas.indexOf(data);
+            remove(position);
         }
     }
 
@@ -60,6 +59,9 @@ public abstract class EBaseRecyclerAdapter<T> extends RecyclerView.Adapter<EBase
         if (mDatas !=null) {
             mDatas.remove(position);
             notifyItemRemoved(position);
+            if (position !=mDatas.size()){
+                notifyItemRangeChanged(position,mDatas.size()-position);
+            }
         }
     }
 
