@@ -13,12 +13,14 @@ import com.example.lxy.androiddemo.mvp.view.EMvpView;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by lxy on 2016/7/26 23:03.
  */
 public abstract class EMvpFragment<M,V extends EMvpView<M>,P extends EMvpPresenter<V,M>> extends MvpFragment<V,P> implements EMvpView<V>{
 
+    private Unbinder unbinder;
     private Loading mLoading;
     protected View mContentView;
 
@@ -78,5 +80,13 @@ public abstract class EMvpFragment<M,V extends EMvpView<M>,P extends EMvpPresent
     public void showToast(int toastRes) {
         String toast = getString(toastRes);
         showToast(toast);
+    }
+
+    @Override
+    public void onDestroy() {
+        if (unbinder !=null){
+            unbinder.unbind();
+        }
+        super.onDestroy();
     }
 }

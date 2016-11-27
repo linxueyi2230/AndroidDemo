@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
+    <permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+
     <application
 
         android:name=".activity.base.DemoApp"
@@ -15,6 +17,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
