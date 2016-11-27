@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -48,6 +49,10 @@ public class ELabelValueView extends FrameLayout implements EViewFinder {
     private int valueTextSize;
     private int valueDrawable;
     private int valuePaddingRight;
+    private boolean valueDrawableVisible;
+
+    private int paddingTop;
+    private int paddingBottom;
 
 
     public ELabelValueView(Context context) {
@@ -96,6 +101,10 @@ public class ELabelValueView extends FrameLayout implements EViewFinder {
         valueTextSize = array.getDimensionPixelSize(R.styleable.ELabelValueView_value_text_size, 0);
         valueDrawable = array.getResourceId(R.styleable.ELabelValueView_value_drawable, R.mipmap.e_arrow);
         valuePaddingRight = array.getDimensionPixelOffset(R.styleable.ELabelValueView_value_padding_right, 0);
+        valueDrawableVisible = array.getBoolean(R.styleable.ELabelValueView_value_drawable_visible, true);
+
+        paddingTop = array.getDimensionPixelOffset(R.styleable.ELabelValueView_padding_top, 0);
+        paddingBottom = array.getDimensionPixelOffset(R.styleable.ELabelValueView_padding_bottom, 0);
 
         array.recycle();
     }
@@ -104,7 +113,6 @@ public class ELabelValueView extends FrameLayout implements EViewFinder {
     private void initView(Context context) {
         view = LayoutInflater.from(context).inflate(R.layout.e_label_value, null);
 
-        mDivide = getViewById(R.id.v_divide);
         mIcon = getViewById(R.id.iv_icon);
         mLabel = getViewById(R.id.tv_label);
         mValue = getViewById(R.id.tv_value);
@@ -164,15 +172,30 @@ public class ELabelValueView extends FrameLayout implements EViewFinder {
         if (valueTextSize >0){
             mValue.setTextSize(TypedValue.COMPLEX_UNIT_PX, valueTextSize);
         }
+
         mValue.setPadding(0, 0, valuePaddingRight, 0);
-        if (valueDrawable != 0) {
+        if (valueDrawable != 0 && valueDrawableVisible) {
             Drawable drawable = getResources().getDrawable(valueDrawable);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             mValue.setCompoundDrawables(null, null, drawable, null);
+        }else {
+            mValue.setCompoundDrawables(null, null, null, null);
         }
 
-        int height = (int) context.getResources().getDimension(R.dimen.e_height_45);
-        this.addView(view, LayoutParams.MATCH_PARENT, height);
+        this.setClickable(true);
+        this.addView(view, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+
+        if (divideVisible) {
+            LayoutParams params = new LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,1);
+            params.gravity = Gravity.BOTTOM;
+            mDivide = new View(getContext());
+            mDivide.setBackgroundColor(divideColor);
+            if (divideMarginLeft != 0) {
+                params.leftMargin = divideMarginLeft;
+            }
+            mDivide.setLayoutParams(params);
+            addView(mDivide);
+        }
     }
 
     public void setLabelText(String text) {

@@ -62,6 +62,10 @@
         <attr name="value_text_size" format="dimension"/>
         <attr name="value_padding_right" format="dimension"/>
         <attr name="value_drawable" format="reference"/>
+        <attr name="value_drawable_visible" format="boolean"/>
+
+        <attr name="padding_top" format="dimension"/>
+        <attr name="padding_bottom" format="dimension"/>
 
     </declare-styleable>
 
