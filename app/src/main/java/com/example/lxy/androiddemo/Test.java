@@ -18,4 +18,36 @@ public class Test {
         return pair;
 
     }
+
+    public Test(){
+
+        Boy boy1 = new Boy();
+        Boy boy2 = new Boy();
+
+        Girl girl = new Girl();
+
+        if (boy1.isGay() && boy2.isGay()){
+            boy1.donot(girl).love(boy2);
+            boy2.donot(girl).love(boy1);
+        }
+    }
+
+    public Pair<Boy,Girl> pair(){
+        Boy boy = new Boy();
+
+        if (boy.isRich() && boy.hasHouse() && boy.hasCar()){
+
+            Girl girl = new Girl();
+            boy.set("Nothing");
+            girl.love(boy);
+
+            Pair<Boy,Girl> pair = Pair.create(boy,girl);
+
+            return pair;
+        }
+
+        return null;
+    }
+
+
 }
