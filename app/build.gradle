@@ -7,14 +7,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0-beta1'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.0.0'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
     }
 }
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion '25.0.0'
 
     defaultConfig {
@@ -24,7 +24,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        renderscriptTargetApi 23
+        renderscriptTargetApi 25
         renderscriptSupportModeEnabled true
     }
 
@@ -61,12 +61,12 @@ dependencies {
         exclude module: 'support-annotations'
     }
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
-    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao:3.2.0'
     compile project(':EventBus')
     compile project(':EventBusAnnotationProcessor')
     compile project(':dev_library')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.jcodecraeer:xrecyclerview:1.2.7'
     compile 'com.github.ybq:Android-SpinKit:1.0.4'
@@ -74,7 +74,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:retrofit-mock:2.1.0'
     compile 'com.squareup.retrofit2:retrofit-adapters:2.1.0'
-    compile 'com.squareup.okhttp3:okhttp:3.4.0'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:retrofit-converters:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.0'
