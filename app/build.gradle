@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
 
 buildscript {
     repositories {
@@ -10,12 +11,13 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
     }
 }
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "com.example.lxy.androiddemo"
@@ -56,11 +58,12 @@ repositories {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile('com.jakewharton:butterknife:8.1.0') {
+    compile('com.jakewharton:butterknife:8.5.1') {
         exclude module: 'support-v4'
         exclude module: 'support-annotations'
     }
-    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //apt 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'org.greenrobot:greendao:3.2.0'
     compile project(':EventBus')
     compile project(':EventBusAnnotationProcessor')
